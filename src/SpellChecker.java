@@ -51,14 +51,35 @@ public class SpellChecker
      */
     public boolean binarySpellCheck(String word)
     {
-        /* IMPLEMENT ME! */
-        int numChecks = 0;
-        for (left <= right) {
+        int left = 0;
+        int right = dictionary.size() - 1;
 
+        // extra tracker for printing commentary
+        int numChecks = 0;
+
+        while (left <= right)
+        {
+            numChecks++;
+
+            int middle = (left + right) / 2;
+
+            if (word.compareTo(dictionary.get(middle)) < 0)
+            {
+                right = middle - 1;
+            }
+            else if (word.compareTo(dictionary.get(middle)) > 0)
+            {
+                left = middle + 1;
+            }
+            else
+            {
+                return true;
+            }
         }
 
-        // this return is a "stub" value to get code to compile
+        // if value not found, return -1
         return false;
+    }
     }
 
     public void importDictionary()
