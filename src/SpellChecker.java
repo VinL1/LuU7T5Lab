@@ -73,13 +73,14 @@ public class SpellChecker
             }
             else
             {
+                System.out.println(numChecks);
                 return true;
             }
         }
 
         // if value not found, return -1
+        System.out.println(numChecks);
         return false;
-    }
     }
 
     public void importDictionary()
